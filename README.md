@@ -100,6 +100,15 @@ Guía completa por cliente: [INSTALL.md](INSTALL.md).
 - Codex: `codex plugin marketplace upgrade`.
 - Gemini CLI: `gemini extensions update saleads`.
 
+## Problemas frecuentes
+
+- **El asistente no ve las tools de SaleADS:** ejecuta `/mcp` y autentica `plugin:saleads:saleads`; si no aparece, `/reload-plugins` o reinicia la sesión.
+- **`MCP-E-SUBSCRIPTION-REQUIRED` o "disponible en los planes Pro y Business":** tu cuenta no tiene un plan con acceso.
+- **El login vuelve a pedirse o aparece `401`:** la sesión expiró; vuelve a autenticar.
+- **El asistente dice que "lanzó" las campañas:** no puede; pídele el link de activación y pulsa **Activar** en SaleADS.
+
+Más casos en [INSTALL.md](INSTALL.md#problemas-frecuentes). No compartas tokens, contraseñas ni URLs firmadas al pedir ayuda.
+
 ## Canales
 
 - `main`: canal principal. Hoy es el canal **dev** porque producción aún no existe. Cuando exista, `main` pasará a producción y el canal dev se moverá a la rama `dev` (`JamiltonQuintero/saleads-agent#dev`, marketplace `saleads-dev`).
@@ -145,6 +154,13 @@ Your client opens the SaleADS sign-in page in the browser (OAuth 2.1 with PKCE).
 
 - Claude Code: `claude plugin marketplace update saleads` then `claude plugin update saleads@saleads`, and restart; or enable auto-update in `/plugin` → **Marketplaces**.
 - Codex: `codex plugin marketplace upgrade`. Gemini CLI: `gemini extensions update saleads`.
+
+### Troubleshooting
+
+- The assistant does not see the SaleADS tools: run `/mcp` and authenticate `plugin:saleads:saleads`; otherwise `/reload-plugins` or restart the session.
+- `MCP-E-SUBSCRIPTION-REQUIRED`: your account has no plan with access.
+- Sign-in keeps coming back or `401`: the session expired; authenticate again.
+- More cases (in Spanish) in [INSTALL.md](INSTALL.md#problemas-frecuentes). Never share tokens, passwords or signed URLs.
 
 ### Channels
 

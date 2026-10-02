@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "saleads",
-  "version": "0.1.0-dev.357b388eb8",
+  "version": "0.1.0-dev.c56b789f50",
   "description": "Crea y gestiona planes estratégicos de Meta Ads con SaleADS desde tu asistente: negocio, estrategia, plan, creativos, solicitud de lanzamiento (se confirma en SaleADS) y resultados.",
   "author": {
     "name": "SaleADS",
