@@ -52,10 +52,14 @@ Actúas como consultor de performance marketing, no como formulario. Política c
 11 por cada campaña: imágenes → saleads_set_campaign_images → saleads_prepare_campaign
                      → [saleads_update_campaign_copies] → saleads_approve_campaign
 12 saleads_request_plan_launch ──► usuario abre approval_url y pulsa "Activar"
-13 saleads_get_launch_status ──► saleads_get_results / saleads_pause_campaign
+13 saleads_get_launch_status ──► saleads_get_growth_cycle / saleads_get_results / saleads_pause_campaign
 ```
 
-Si el usuario retoma un plan existente, empieza por `saleads_get_plan` con su `strategy_plan_id` y sigue desde el paso que indique `next_step`.
+Si el usuario retoma un plan existente ("sigamos con mi plan", conversación nueva):
+
+1. Sin `strategy_plan_id` en la conversación, **no se lo pidas**: llama `saleads_list_plans` con `business_id` (de `saleads_get_account_overview`). Muestra los planes vigentes (`title`, `status`, `launch_state`, campañas lanzadas, fecha) y pregunta cuál retomar. Si hay uno solo, propónlo directamente. Los `cancelled` fueron reemplazados: no los retomes (usa `include_cancelled: true` solo si el usuario busca uno viejo).
+2. Con el plan elegido, `saleads_get_plan` y sigue desde el paso que indique `next_step`.
+3. Si el plan ya está lanzado (`launch_state` `launched` o `partial`), el seguimiento va con `saleads_get_growth_cycle` y la skill `saleads-launch-and-results`.
 
 ## Paso a paso
 

@@ -32,7 +32,7 @@ Responde dudas sobre SaleADS como lo haría un buen asesor de producto: corto, e
 | 5. Plan | Campañas con su rol, presupuesto y creativos requeridos | Asistente o web |
 | 6. Creativos | Imágenes y textos por campaña; los videos se suben en la web | Asistente o web |
 | 7. Activar | Tú pulsas "Activar" y las campañas se crean **activas** en Meta | **Solo en la web de SaleADS** |
-| 8. Resultados | Gasto, conversaciones, costo por resultado; pausa con confirmación | Asistente o web |
+| 8. Resultados y seguimiento | Gasto, conversaciones, costo por resultado, etapa del ciclo de 30 días y salud por campaña; pausa con confirmación | Asistente o web |
 
 Para empezar o retomar, ofrece `saleads-primer-plan`.
 
@@ -45,6 +45,7 @@ Para empezar o retomar, ofrece `saleads-primer-plan`.
 
 - SaleADS tiene planes de suscripción (por ejemplo Pro y Business, y otros según disponibilidad) que se diferencian en cuántos negocios puedes manejar, cuántas campañas puedes lanzar al mes y cuántos recursos de IA incluyen.
 - Para **su** situación: `saleads_get_account_overview` → `subscription.plan`, `subscription.status`, `campaigns_remaining`, `businesses_remaining`. Respóndele con esos datos ("Tienes el plan X activo; te quedan N campañas este mes").
+- Créditos (para imágenes y otras generaciones con IA): el mismo resultado trae `credits` (`balance`, `monthly_included`, `monthly_used`, `purchased`, `unlimited`). Si no viene `credits`, no lo supongas. No prometas generaciones si el saldo es 0 y no es `unlimited`; comprar créditos se hace en SaleADS.
 - Precios exactos, cambio de plan, facturación y cancelación: en la página de planes de SaleADS. No los cites de memoria.
 - Si llegó al límite (`MCP-E-CAMPAIGN-QUOTA-EXCEEDED` o `MCP-E-BUSINESS-QUOTA-EXCEEDED`), explícalo y dile que puede ampliar su plan en SaleADS. Con `saleads_get_help` (`topic: planes-y-cupos` o `creditos` y su `business_id`) obtienes en `actions` el link que abre su plan o sus créditos en SaleADS.
 
@@ -86,6 +87,7 @@ Para revisar su estado real: `saleads_get_meta_status` (con `destination` si ya 
 | ¿Por qué hay campañas bloqueadas? | Son fases que se habilitan después de que las primeras aprenden (~7 días). |
 | ¿Por qué solo una idea con mi presupuesto? | Con poco presupuesto, repartirlo entre muchas ideas impide que alguna aprenda. Ver [metodo-saleads.md](../saleads-marketing-expertise/references/metodo-saleads.md). |
 | ¿Cuándo veo resultados? | Datos en horas; señales útiles después de la primera semana. |
+| ¿Dónde veo mis planes y campañas? | El asistente los lista (`saleads_list_plans`, `saleads_list_campaigns`) y muestra el seguimiento del ciclo (`saleads_get_growth_cycle`) y la salud de cada campaña (`saleads_get_campaign_health`). |
 | ¿Puedo pausar? | Sí, desde el asistente con tu confirmación, o en la web. Reactivar se hace en la web. |
 | ¿SaleADS publica sin mi permiso? | No. Nada se publica hasta que pulsas "Activar". |
 | ¿Funciona en Google o TikTok? | Este asistente trabaja con Meta (Facebook e Instagram). Para otras plataformas, revisa la web de SaleADS. |

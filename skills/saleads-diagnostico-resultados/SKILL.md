@@ -24,9 +24,11 @@ Base: [resultados.md](../saleads-marketing-expertise/references/resultados.md), 
 ### 1. Ubica las campañas (sin preguntar)
 
 1. `saleads_get_account_overview` → negocio seleccionado.
-2. Si el usuario menciona un plan o hay uno en la conversación, `saleads_get_launch_status` con su `strategy_plan_id` para confirmar qué está lanzado. Si `phase` es `not_started`, no hay resultados todavía: explica que falta pulsar "Activar".
-3. `saleads_get_results` con `business_id` (y `strategy_plan_id` si lo tienes). `period`: `7d` por defecto; `1d` si acaba de lanzar; `14d` o `30d` si lleva más tiempo o lo pide.
-4. Si tienes el plan, `saleads_get_plan` para conocer el rol e hipótesis de cada campaña.
+2. Sin un plan en la conversación, `saleads_list_campaigns` con `business_id` (campañas lanzadas, su `campaign_id` y `strategy_plan_id`). Si no hay ninguna, `saleads_list_plans` muestra si hay un plan pendiente de activar. Con un plan, `saleads_get_launch_status` confirma qué está lanzado; si `phase` es `not_started`, no hay resultados todavía: explica que falta pulsar "Activar".
+3. `saleads_get_growth_cycle` con `strategy_plan_id`: día y etapa del ciclo (aprender, optimizar…), acción pendiente y métricas del ciclo. Úsalo para ubicar la etapa en vez de calcular días a mano.
+4. `saleads_get_results` con `business_id` (y `strategy_plan_id` si lo tienes). `period`: `7d` por defecto; `1d` si acaba de lanzar; `14d`, `30d`, `60d`, `90d` o `lifetime` si lleva más tiempo o lo pide. Con `compare_previous: true` ves el cambio frente al periodo anterior (descriptivo).
+5. Para una campaña concreta que "no entrega" o "va mal", `saleads_get_campaign_health` con su `campaign_id`: semáforo de SaleADS, estado real en Meta (revisión, rechazo) y motivos. Si viene `critical` por rechazo o pago, eso explica el problema antes que cualquier métrica.
+6. Si tienes el plan, `saleads_get_plan` para conocer el rol e hipótesis de cada campaña.
 
 ### 2. Lee con contexto
 
@@ -61,7 +63,7 @@ Si los datos no explican el problema, haz **una** pregunta sobre lo que Meta no 
 | Muchos mensajes, pocas ventas | "¿En cuánto tiempo respondes y qué pasa cuando das el precio?" | Conversación y oferta → `saleads-ventas-whatsapp` |
 | Clics a la web, sin compras | "¿La página carga bien en el celular y el precio/envío es claro?" | Página y oferta |
 | Muchas impresiones, pocos clics o mensajes | — | Gancho o imagen no detienen; renovar piezas **dentro de la misma idea** |
-| Gasto sin ningún resultado varios días | — | Revisar estado y posibles rechazos en SaleADS; considerar pausa |
+| Gasto sin ningún resultado varios días | — | `saleads_get_campaign_health` (rechazos o problemas en Meta); considerar pausa |
 | Costos subiendo tras semanas | — | Posible cansancio del creativo; renovar piezas |
 
 ### 5. Siguientes acciones posibles (elige una)
