@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "saleads": {
+      "url": "https://mcp-dev.saleads.ai/mcp",
+      "auth": {
+        "CLIENT_ID": "mcp-cursor"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "saleads",
+  "interface": {
+    "displayName": "SaleADS"
+  },
+  "plugins": [
+    {
+      "name": "saleads",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

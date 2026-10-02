@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.saleads/saleads",
+  "title": "SaleADS",
+  "description": "Plan, prepare and track Meta Ads strategic plans in SaleADS. Launch is confirmed in SaleADS.",
+  "version": "0.1.0-dev.357b388eb8",
+  "websiteUrl": "https://saleads.ai",
+  "repository": {
+    "url": "https://github.com/JamiltonQuintero/saleads-agent",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp-dev.saleads.ai/mcp"
+    }
+  ]
+}

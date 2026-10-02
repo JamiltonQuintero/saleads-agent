@@ -1,0 +1,12 @@
+# SaleADS en Codex: agrega este bloque a ~/.codex/config.toml
+# (o ejecuta: codex mcp add saleads --url https://mcp-dev.saleads.ai/mcp --oauth-client-id mcp-codex --oauth-resource https://mcp-dev.saleads.ai/mcp)
+# y luego inicia sesión con: codex mcp login saleads
+#
+# Para dev, ver INSTALL.md (sección "Entorno dev").
+
+[mcp_servers.saleads]
+url = "https://mcp-dev.saleads.ai/mcp"
+oauth_resource = "https://mcp-dev.saleads.ai/mcp"
+
+[mcp_servers.saleads.oauth]
+client_id = "mcp-codex"

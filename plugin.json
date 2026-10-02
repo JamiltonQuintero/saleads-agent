@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "saleads",
+  "version": "0.1.0-dev.357b388eb8",
+  "description": "Crea y gestiona planes estratégicos de Meta Ads con SaleADS desde tu asistente: negocio, estrategia, plan, creativos, solicitud de lanzamiento (se confirma en SaleADS) y resultados.",
+  "author": {
+    "name": "SaleADS",
+    "url": "https://saleads.ai"
+  },
+  "homepage": "https://github.com/JamiltonQuintero/saleads-agent",
+  "repository": "https://github.com/JamiltonQuintero/saleads-agent",
+  "license": "Apache-2.0",
+  "keywords": [
+    "saleads",
+    "meta-ads",
+    "marketing",
+    "mcp",
+    "campaigns"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "SaleADS",
+        "shortDescription": "Planes de Meta Ads con SaleADS",
+        "longDescription": "Prepara tu negocio, genera y aprueba la estrategia de comunicación, configura cada campaña del plan con sus imágenes y textos, y solicita el lanzamiento: la activación siempre la confirmas tú en SaleADS. Después, consulta métricas y pausa campañas con confirmación.",
+        "developerName": "SaleADS",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://saleads.ai",
+        "defaultPrompt": [
+          "Crea un plan estratégico de Meta Ads para mi negocio con SaleADS",
+          "¿Cómo van mis campañas de SaleADS esta semana?",
+          "Ayúdame a crear una oferta para mi negocio y anunciarla con SaleADS"
+        ]
+      }
+    }
+  }
+}

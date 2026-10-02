@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "saleads": {
+      "type": "http",
+      "url": "https://mcp-dev.saleads.ai/mcp",
+      "oauth": {
+        "clientId": "mcp-claude"
+      }
+    }
+  }
+}

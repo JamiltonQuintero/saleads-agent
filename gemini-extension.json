@@ -1,0 +1,11 @@
+{
+  "name": "saleads",
+  "version": "0.1.0-dev.357b388eb8",
+  "description": "Crea y gestiona planes estratégicos de Meta Ads con SaleADS: negocio, estrategia, plan, creativos, solicitud de lanzamiento (se confirma en SaleADS) y resultados.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "saleads": {
+      "httpUrl": "https://mcp-dev.saleads.ai/mcp"
+    }
+  }
+}

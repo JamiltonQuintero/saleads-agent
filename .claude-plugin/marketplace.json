@@ -1,0 +1,21 @@
+{
+  "name": "saleads",
+  "description": "Plugins oficiales de SaleADS para Claude Code: conector MCP remoto y skills del flujo de planes estratégicos de Meta Ads (canal dev).",
+  "owner": {
+    "name": "SaleADS",
+    "url": "https://saleads.ai"
+  },
+  "plugins": [
+    {
+      "name": "saleads",
+      "source": "./",
+      "description": "Conector MCP remoto de SaleADS + 13 skills: flujo completo (negocio, plan estratégico, creativos, lanzamiento y resultados), skills por intención y un consultor de marketing que propone y pregunta poco.",
+      "category": "marketing",
+      "tags": [
+        "meta-ads",
+        "mcp",
+        "skills"
+      ]
+    }
+  ]
+}
