@@ -5,7 +5,7 @@ SaleADS se conecta a tu asistente como un **servidor MCP remoto**. Con él puede
 | Qué | Valor |
 |---|---|
 | URL del MCP | `https://mcp-dev.saleads.ai/mcp` |
-| Repositorio público (plugin + skills) | https://github.com/JamiltonQuintero/saleads-agent |
+| Repositorio público (plugin + skills) | https://github.com/JamiltonValkor/saleads-agent |
 | Transporte | Streamable HTTP |
 | Inicio de sesión | OAuth con tu cuenta de SaleADS |
 
@@ -72,11 +72,11 @@ Claude Desktop usa los mismos conectores que claude.ai: agrega el conector en cl
 **Opción A — Plugin (recomendada: conector + 13 skills).** No necesitas acceso a ningún repo privado: el plugin se publica en GitHub.
 
 ```bash
-claude plugin marketplace add JamiltonQuintero/saleads-agent
+claude plugin marketplace add JamiltonValkor/saleads-agent
 claude plugin install saleads@saleads
 ```
 
-O, dentro de una sesión: `/plugin marketplace add JamiltonQuintero/saleads-agent` y `/plugin install saleads@saleads`.
+O, dentro de una sesión: `/plugin marketplace add JamiltonValkor/saleads-agent` y `/plugin install saleads@saleads`.
 
 Luego, en una sesión, ejecuta `/mcp`, elige `plugin:saleads:saleads` y **Authenticate**. Las skills quedan como `/saleads:saleads-strategic-plan`, `/saleads:saleads-business-setup`, etc., y Claude las usa solo cuando corresponde.
 
@@ -108,7 +108,7 @@ Las skills llegarán con el plugin de ChatGPT cuando se publique (post-canary).
 **Opción A — Plugin (conector + 13 skills).**
 
 ```bash
-codex plugin marketplace add JamiltonQuintero/saleads-agent
+codex plugin marketplace add JamiltonValkor/saleads-agent
 codex plugin add saleads@saleads
 codex mcp login saleads
 ```
@@ -187,7 +187,7 @@ Pulsa **Start** sobre el servidor en `mcp.json`; VS Code abre el navegador para 
 La extensión incluye el conector, `GEMINI.md` y las 13 skills.
 
 ```bash
-gemini extensions install https://github.com/JamiltonQuintero/saleads-agent
+gemini extensions install https://github.com/JamiltonValkor/saleads-agent
 ```
 
 Para actualizar: `gemini extensions update saleads`.

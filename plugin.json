@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "saleads",
-  "version": "0.1.0-dev.d35a9c6076",
+  "version": "0.1.0-dev.fb7c9d9362",
   "description": "Crea y gestiona planes estratégicos de Meta Ads con SaleADS desde tu asistente: negocio, estrategia, plan, creativos, solicitud de lanzamiento (se confirma en SaleADS) y resultados.",
   "author": {
     "name": "SaleADS",
     "url": "https://saleads.ai"
   },
-  "homepage": "https://github.com/JamiltonQuintero/saleads-agent",
-  "repository": "https://github.com/JamiltonQuintero/saleads-agent",
+  "homepage": "https://github.com/JamiltonValkor/saleads-agent",
+  "repository": "https://github.com/JamiltonValkor/saleads-agent",
   "license": "Apache-2.0",
   "keywords": [
     "saleads",

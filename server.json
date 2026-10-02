@@ -3,10 +3,10 @@
   "name": "ai.saleads/saleads",
   "title": "SaleADS",
   "description": "Plan, prepare and track Meta Ads strategic plans in SaleADS. Launch is confirmed in SaleADS.",
-  "version": "0.1.0-dev.d35a9c6076",
+  "version": "0.1.0-dev.fb7c9d9362",
   "websiteUrl": "https://saleads.ai",
   "repository": {
-    "url": "https://github.com/JamiltonQuintero/saleads-agent",
+    "url": "https://github.com/JamiltonValkor/saleads-agent",
     "source": "github"
   },
   "remotes": [

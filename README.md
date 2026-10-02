@@ -33,14 +33,14 @@ SaleADS planifica, prepara y mide campañas de Meta Ads (Facebook, Instagram y W
 En la terminal:
 
 ```bash
-claude plugin marketplace add JamiltonQuintero/saleads-agent
+claude plugin marketplace add JamiltonValkor/saleads-agent
 claude plugin install saleads@saleads
 ```
 
 O dentro de una sesión de Claude Code:
 
 ```
-/plugin marketplace add JamiltonQuintero/saleads-agent
+/plugin marketplace add JamiltonValkor/saleads-agent
 /plugin install saleads@saleads
 ```
 
@@ -49,7 +49,7 @@ Luego abre `/mcp`, elige `plugin:saleads:saleads` y pulsa **Authenticate**. Las 
 ### Codex
 
 ```bash
-codex plugin marketplace add JamiltonQuintero/saleads-agent
+codex plugin marketplace add JamiltonValkor/saleads-agent
 codex plugin add saleads@saleads
 codex mcp login saleads
 ```
@@ -71,7 +71,7 @@ Copia [`examples/vscode/.vscode/mcp.json`](examples/vscode/.vscode/mcp.json) a l
 ### Gemini CLI
 
 ```bash
-gemini extensions install https://github.com/JamiltonQuintero/saleads-agent
+gemini extensions install https://github.com/JamiltonValkor/saleads-agent
 ```
 
 Reinicia Gemini CLI y ejecuta `/mcp auth saleads`.
@@ -111,8 +111,8 @@ Más casos en [INSTALL.md](INSTALL.md#problemas-frecuentes). No compartas tokens
 
 ## Canales
 
-- `main`: canal principal. Hoy es el canal **dev** porque producción aún no existe. Cuando exista, `main` pasará a producción y el canal dev se moverá a la rama `dev` (`JamiltonQuintero/saleads-agent#dev`, marketplace `saleads-dev`).
-- Este repo se genera automáticamente desde el repositorio fuente de SaleADS; no envíes cambios aquí. Reporta problemas en [Issues](https://github.com/JamiltonQuintero/saleads-agent/issues).
+- `main`: canal principal. Hoy es el canal **dev** porque producción aún no existe. Cuando exista, `main` pasará a producción y el canal dev se moverá a la rama `dev` (`JamiltonValkor/saleads-agent#dev`, marketplace `saleads-dev`).
+- Este repo se genera automáticamente desde el repositorio fuente de SaleADS; no envíes cambios aquí. Reporta problemas en [Issues](https://github.com/JamiltonValkor/saleads-agent/issues).
 
 ---
 
@@ -134,16 +134,16 @@ SaleADS plans, prepares and measures Meta Ads campaigns (Facebook, Instagram and
 Claude Code (one command per line):
 
 ```bash
-claude plugin marketplace add JamiltonQuintero/saleads-agent
+claude plugin marketplace add JamiltonValkor/saleads-agent
 claude plugin install saleads@saleads
 ```
 
 Then run `/mcp`, pick `plugin:saleads:saleads` and press **Authenticate**.
 
-- Codex: `codex plugin marketplace add JamiltonQuintero/saleads-agent`, `codex plugin add saleads@saleads`, `codex mcp login saleads`.
+- Codex: `codex plugin marketplace add JamiltonValkor/saleads-agent`, `codex plugin add saleads@saleads`, `codex mcp login saleads`.
 - Cursor: use the one-click link above or [`examples/cursor/mcp.json`](examples/cursor/mcp.json).
 - VS Code: copy [`examples/vscode/.vscode/mcp.json`](examples/vscode/.vscode/mcp.json) into your project's `.vscode/`.
-- Gemini CLI: `gemini extensions install https://github.com/JamiltonQuintero/saleads-agent`, then `/mcp auth saleads`.
+- Gemini CLI: `gemini extensions install https://github.com/JamiltonValkor/saleads-agent`, then `/mcp auth saleads`.
 - claude.ai / Claude Desktop / ChatGPT custom connector URL: `https://mcp-dev.saleads.ai/mcp` (fallback OAuth client ID for Claude: `mcp-claude`, no secret).
 
 ### How sign-in works
@@ -164,7 +164,7 @@ Your client opens the SaleADS sign-in page in the browser (OAuth 2.1 with PKCE).
 
 ### Channels
 
-`main` is currently the **dev** channel because production does not exist yet. When it does, `main` becomes production and dev moves to the `dev` branch (`JamiltonQuintero/saleads-agent#dev`, marketplace `saleads-dev`).
+`main` is currently the **dev** channel because production does not exist yet. When it does, `main` becomes production and dev moves to the `dev` branch (`JamiltonValkor/saleads-agent#dev`, marketplace `saleads-dev`).
 
 This repository is generated automatically from the SaleADS source repository; please report issues instead of sending pull requests.
 
