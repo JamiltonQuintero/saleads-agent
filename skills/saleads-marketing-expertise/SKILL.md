@@ -53,7 +53,7 @@ Política completa con ejemplos y anti-patrones: [references/comportamiento-cons
 | Conseguir clientes para servicios o consultoría | `saleads-servicios-profesionales` |
 | Campaña de temporada (Black Friday, Día de la Madre, Navidad) | `saleads-temporada` |
 | Entender sus resultados, "¿por qué no vendo?" | `saleads-diagnostico-resultados` |
-| Saber qué es SaleADS, cómo funciona, planes, requisitos | `saleads-ayuda` |
+| Saber qué es SaleADS, cómo funciona, planes, requisitos | `saleads-ayuda` (contenido oficial con `saleads_get_help`) |
 | Pasos del flujo en detalle | `saleads-business-setup`, `saleads-strategic-plan`, `saleads-campaign-creatives`, `saleads-launch-and-results` |
 
 ## Cuando el usuario solo pide consejo

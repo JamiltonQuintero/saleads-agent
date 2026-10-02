@@ -126,19 +126,21 @@ Guarda el `type` y el `id` que devuelve. `saleads-strategic-plan` los necesita c
 
 ### Paso 5 — Meta (Facebook / Instagram)
 
-Llama `saleads_get_meta_status` con el `business_id`. Si ya sabes el destino de las campañas, pásalo en `destination` (`messages` para WhatsApp/Messenger o `web` para el sitio): así la revisión usa los requisitos de ese destino. Si aún no lo sabes, omítelo.
+Llama `saleads_get_meta_status` con el `business_id`. Si ya sabes el destino de las campañas, pásalo en `destination` (`messages` para WhatsApp/Messenger o `web` para el sitio). Si lo omites, la tool usa el destino del último plan del negocio y, si no hay plan, revisa los dos por separado (`destination_checked: both`).
 
-Devuelve `connected`, `ready`, `assets` (business_manager, page, ad_account, pixel, instagram, whatsapp), `blockers[]` y `action_url`.
+Devuelve `connected`, `ready`, `assets` (business_manager, page, ad_account, pixel, instagram, whatsapp), `blocker_details[]`, `destination_checked`, `destinations[]`, `alternatives` y `action_url`. Cada elemento de `blocker_details` trae `title`, `next_action`, `domain` (whatsapp, permissions, billing, instagram, pixel, assets, connection), `fix_in` (`saleads` o `meta`) y **su propio `action_url`**, que abre la pantalla exacta de ese bloqueo.
 
 | Resultado | Qué haces |
 |---|---|
 | `ready: true` | Resume los activos por nombre (página, cuenta publicitaria, Instagram, WhatsApp, pixel) y sigue. |
-| `ready: false` con `action_url` | Explica los `blockers` en lenguaje simple y entrega el link. |
-| `connected: true` pero falta un activo | Igual: entrega `action_url` y di qué activo falta. |
+| `ready: false` | Explica cada elemento de `blocker_details` con su `title` y su `next_action`, en el orden en que vienen, y entrega **el `action_url` de ese bloqueo** (no un link genérico de conexión). |
+| `fix_in: meta` (pago, saldo, límite de gasto, permisos, cuenta restringida) | Di que se resuelve en Meta, no en SaleADS; el link lleva a la facturación o a la guía. No prometas que SaleADS lo arregla. |
+| `verified: false` | Di que no se pudo verificar; no afirmes que falta algo. Pide revisarlo y vuelve a consultar. |
+| `destination_checked: both` y `alternatives` no vacío | Cuenta qué destino ya está listo (p. ej. "la web ya está lista; WhatsApp no"). **Pregunta** al usuario si prefiere ese destino; nunca lo cambies por tu cuenta. |
 
-Mensaje sugerido:
+Mensaje sugerido (un bloqueo de WhatsApp):
 
-> Para publicar anuncios necesito que tu cuenta de Meta esté conectada en SaleADS. Falta: *(blockers)*. Abre este link, inicia sesión en SaleADS si te lo pide y completa la conexión: *(action_url)*. Cuando termines, vuelve aquí y dime "listo".
+> Tu Meta ya está conectado, pero falta un número de WhatsApp Business listo para recibir mensajes. Abre este link y elige el número conectado a tu página: *(blocker_details[0].action_url)*. Si prefieres no usar WhatsApp, podemos pautar a tu sitio web. Cuando termines, dime "listo".
 
 Cuando el usuario diga que terminó, vuelve a llamar `saleads_get_meta_status`. No asumas que quedó conectado sin verificarlo.
 

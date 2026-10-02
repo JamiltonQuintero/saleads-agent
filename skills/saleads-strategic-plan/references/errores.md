@@ -26,11 +26,11 @@ Regla general:
 | Código | Cuándo pasa | Qué haces | ¿Reintentar? |
 |---|---|---|---|
 | `MCP-E-ACCESS-NOT-ENABLED` | El usuario aún no tiene acceso al asistente. | Explícalo y no sigas. | no |
-| `MCP-E-SUBSCRIPTION-REQUIRED` | Sin suscripción activa. | Pide activar su plan en SaleADS; no sigas. | no |
+| `MCP-E-SUBSCRIPTION-REQUIRED` | Sin suscripción activa. | Pide activar su plan en SaleADS; `action_url` es la página informativa de planes (no un pago). No sigas. | no |
 | `MCP-E-BUSINESS-NOT-FOUND` | `business_id` inexistente o de otro usuario. | `saleads_get_account_overview` y usa un negocio de la lista. | no |
 | `MCP-E-BUSINESS-QUOTA-EXCEEDED` | Límite de negocios del plan. | Explica el límite; usa un negocio existente. | no |
 | `MCP-E-OFFERING-REQUIRED` | Falta la oferta o no es del negocio. | `saleads_list_offerings` o `saleads_create_offering`. | no |
-| `MCP-E-META-NOT-READY` | Meta sin conectar o con activos incompletos. | Entrega `action_url` (conectar Meta); luego `saleads_get_meta_status`. | no |
+| `MCP-E-META-NOT-READY` | Meta sin conectar o con activos incompletos. | Llama `saleads_get_meta_status` y entrega el `action_url` de cada elemento de `blocker_details` (pantalla exacta del bloqueo). | no |
 | `MCP-E-CONTEXT-REVIEW-REQUIRED` | Falta contexto del negocio para la estrategia, o un dato del negocio (`details.missing`, p. ej. `offering_type` o `category`) para completar el perfil. | `saleads_get_business_profile` para ver `missing`; completa con `saleads_describe_business` o `saleads_complete_business_profile`; vuelve a `saleads_start_strategy`. | no |
 | `MCP-E-BUDGET-INVALID` | Monto o moneda inválidos al crear la estrategia. | Pide un monto y una moneda válidos. | no |
 | `MCP-E-FX-UNAVAILABLE` | No hay tasa de cambio disponible. | Reintenta más tarde o usa USD. | sí |
@@ -45,7 +45,7 @@ Regla general:
 | `MCP-E-IMAGE-URL-REJECTED` | URL no https, privada o no descargable. | Usa `saleads_create_media_upload` + PUT, o el link para subir imágenes en SaleADS. | no |
 | `MCP-E-IMAGES-INCOMPLETE` | La campaña no tiene todas sus imágenes. | `saleads_set_campaign_images` con las faltantes. | no |
 | `MCP-E-CAMPAIGN-NOT-READY` | El borrador no pasa sus validaciones. | Resuelve cada check de la lista (`failed_checks`) y vuelve a aprobar. | no |
-| `MCP-E-CAMPAIGN-QUOTA-EXCEEDED` | Sin cupo de campañas en el plan de suscripción. | Explica el límite; el usuario amplía su plan en SaleADS. | no |
+| `MCP-E-CAMPAIGN-QUOTA-EXCEEDED` | Sin cupo de campañas en el plan de suscripción. | Explica el límite; si quiere ampliarlo, entrega el link `upgrade-plan` (blocker de `saleads_request_plan_launch` o `actions` de `saleads_get_help`). | no |
 | `MCP-E-PLAN-NOT-READY-TO-LAUNCH` | Hay campañas activas sin `configured` (las `locked`, `skipped` y `launched` no cuentan). | Completa las campañas listadas (flujo de creativos). | no |
 | `MCP-E-OPERATION-CANCELLED` | La operación fue cancelada. | Díselo al usuario; vuelve a iniciar la acción solo si él lo pide. | no |
 | `MCP-E-OPERATION-NOT-FOUND` | Operación inexistente, expirada o ajena. | Vuelve a iniciar la acción con la tool original. | no |

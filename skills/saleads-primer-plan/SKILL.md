@@ -65,7 +65,7 @@ Cómo decidir cada punto: destino según [audiencia-y-destino.md](../saleads-mar
 Con el "sí":
 
 1. Guarda lo pendiente: `saleads_create_offering` (solo con precio confirmado o sin precio) y `saleads_describe_business` si aplica.
-2. `saleads_get_meta_status` con el `destination` elegido. Si `ready` es `false`, entrega `action_url` y explica los `blockers` en simple; puedes generar la estrategia mientras tanto, avisando que no se podrá activar hasta conectar Meta.
+2. `saleads_get_meta_status` con el `destination` elegido. Si `ready` es `false`, explica cada elemento de `blocker_details` en simple y entrega su `action_url`; puedes generar la estrategia mientras tanto, avisando que no se podrá activar hasta conectar Meta.
 
 ### D. Estrategia
 
